@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+
+ <context-param>
+  <param-name>org.restlet.application</param-name>
+  <param-value>com.aeonconsulting.bdj.gae.RestApplication</param-value>
+ </context-param>
+
+	<servlet>
+		<servlet-name>BDJ_GAE</servlet-name>
+		<servlet-class>com.aeonconsulting.bdj.gae.BDJ_GAEServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>datas</servlet-name>
+		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>datas</servlet-name>
+		<url-pattern>/datas/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BDJ_GAE</servlet-name>
+		<url-pattern>/bdj_gae</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
